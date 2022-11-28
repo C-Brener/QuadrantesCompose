@@ -2,7 +2,9 @@ package com.example.quadrantescompose
 
 import androidx.activity.compose.setContent
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.test.assertIsDisplayed
+import androidx.compose.ui.test.assertTextEquals
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.test.core.app.ActivityScenario
@@ -33,7 +35,7 @@ class MainActivityTest{
             activityScenario.onActivity { activity ->
 
 
-                composeRule.onNodeWithTag("First Column").assertIsDisplayed()
+                composeRule.onNodeWithTag("Fourth Card").assertTextEquals("Column composable ")
 
             }
 

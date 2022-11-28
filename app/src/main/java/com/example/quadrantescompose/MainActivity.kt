@@ -70,7 +70,8 @@ fun CardWithInfos(color: Color, color2: Color, color3: Color, color4: Color) {
                 CardInformations(
                     title = stringResource(id = R.string.first_title), subtitle = stringResource(
                         id = R.string.first_description
-                    )
+                    ),
+                    testTag = "First Card"
                 )
 
             }
@@ -86,7 +87,8 @@ fun CardWithInfos(color: Color, color2: Color, color3: Color, color4: Color) {
                 CardInformations(
                     title = stringResource(id = R.string.second_title), subtitle = stringResource(
                         id = R.string.second_description
-                    )
+                    ),
+                    testTag = "Second Card"
                 )
             }
 
@@ -109,7 +111,8 @@ fun CardWithInfos(color: Color, color2: Color, color3: Color, color4: Color) {
                 CardInformations(
                     title = stringResource(id = R.string.third_title), subtitle = stringResource(
                         id = R.string.third_description
-                    )
+                    ),
+                    testTag = "Third Card"
                 )
             }
             Column(
@@ -124,7 +127,8 @@ fun CardWithInfos(color: Color, color2: Color, color3: Color, color4: Color) {
                 CardInformations(
                     title = stringResource(id = R.string.fourth_title), subtitle = stringResource(
                         id = R.string.fourth_description
-                    )
+                    ),
+                    testTag = "Fourth Card"
                 )
             }
 
@@ -135,7 +139,7 @@ fun CardWithInfos(color: Color, color2: Color, color3: Color, color4: Color) {
 }
 
 @Composable
-fun CardInformations(title: String, subtitle: String) {
+fun CardInformations(title: String, subtitle: String, testTag:String) {
     Column(
         modifier = Modifier
             .padding(16.dp)
@@ -143,11 +147,12 @@ fun CardInformations(title: String, subtitle: String) {
             .fillMaxHeight()
             .wrapContentWidth()
             .wrapContentHeight()
+
     ) {
         Text(
             text = title,
             fontWeight = FontWeight.Bold,
-            modifier = Modifier.padding(16.dp),
+            modifier = Modifier.padding(16.dp).testTag(testTag),
             textAlign = TextAlign.Center
         )
         Text(text = subtitle, textAlign = TextAlign.Justify)
